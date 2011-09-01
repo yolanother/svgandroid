@@ -17,6 +17,7 @@ package com.larvalabs.svgandroid;
    See the License for the specific language governing permissions and
    limitations under the License.
 
+   Changes Copyright 2011 Google Inc.
 */
 /**
  * Parses numbers from SVG text. Based on the Batik Number Parser (Apache 2 License).
