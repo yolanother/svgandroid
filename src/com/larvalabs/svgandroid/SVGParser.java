@@ -802,10 +802,10 @@ public class SVGParser {
             String v = getAttr(name);
             if (v == null) {
                 return null;
-            } else if (v.startsWith("#") && (v.length == 4 || v.length == 9)) {
+            } else if (v.startsWith("#") && (v.length() == 4 || v.length() == 9)) {
                 try {
                     int result = Integer.parseInt(v.substring(1), 16);
-		    return v.length == 4 ? hex3Tohex6(result) : result;
+		    return v.length() == 4 ? hex3Tohex6(result) : result;
                 } catch (NumberFormatException nfe) {
                     return null;
                 }
