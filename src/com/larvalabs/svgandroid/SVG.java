@@ -1,5 +1,6 @@
 package com.larvalabs.svgandroid;
 
+import android.graphics.Canvas;
 import android.graphics.Picture;
 import android.graphics.RectF;
 import android.graphics.drawable.PictureDrawable;
@@ -116,5 +117,21 @@ public class SVG {
      */
     public RectF getLimits() {
         return limits;
+    }
+    
+    public void draw(Canvas canvas, int x, int y, float scaleX, float scaleY) {
+    	canvas.save();
+    	canvas.translate(x, y);
+    	canvas.scale(scaleX, scaleY);
+    	getPicture().draw(canvas);
+    	canvas.restore();
+    }
+    
+    public void draw(Canvas canvas, int x, int y, float scale) {
+    	draw(canvas, x, y, scale, scale);
+    }
+    
+    public void draw(Canvas canvas) {
+    	getPicture().draw(canvas);
     }
 }
